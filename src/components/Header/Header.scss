@@ -2,5 +2,33 @@
 @import '../../styles/Variables.scss';
 
 header{
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5%;
+    background: $White;
+    padding-block: 1.3rem;
+    color: $Very-Dark-Blue-DMBG ;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .displayMode{
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+
+
+        img{
+            width: 20px;
+            cursor: pointer;
+        }
+        p{
+            font-weight: 600;
+            font-size: 15px;
+        }
+    }
 }

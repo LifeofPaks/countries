@@ -19,10 +19,10 @@ const AllCountries = ({ countries }) => {
             <section key={numericCode}>
                 <div>
                 <img src={flags.png} alt={name} />
-                <h1>{name}</h1>
-                <h2>Population : <span>{population}</span></h2>
-                <h2>Region : <span>{region}</span></h2>
-                <h2>Capital : <span>{capital}</span></h2>
+                <h2>{name}</h2>
+                <h3>Population : <span>{population}</span></h3>
+                <h3>Region : <span>{region}</span></h3>
+                <h3>Capital : <span>{capital}</span></h3>
                 </div>
               
             </section>

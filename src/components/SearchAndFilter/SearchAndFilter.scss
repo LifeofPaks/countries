@@ -2,5 +2,88 @@
 @import '../../styles/Variables.scss';
 
 .searchAndFilter{
+   padding-inline: 5%; 
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   margin-bottom: 3rem;
+
+
+   form{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: $White;
+    padding: 1.2rem;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+    button{
+        .icon{
+            color: $Dark-Gray-LMI;
+            font-size: 16px;
+        }
+    }
+
+   
+
+    input{
+        width: 100%;
+
+        &::placeholder{
+            color: $Dark-Gray-LMI;
+        }
+    }
+
+   }
+
+   .filterWrapper{
+    display: flex;
+    flex-direction: column;
+gap: 0.2rem;
+
+    .filterHeader{
+        position: relative;
+        background: $White;
+        padding: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        cursor: pointer;
     
+        p{
+            font-size: 14px;
+        }
+
+        .down{
+            font-size: 12px;
+        }
+       }
+
+       .regions{
+        position: absolute;
+        background: $White;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 200px;
+        margin-top: 3.8rem;
+
+
+        li{
+            font-size: 14px;
+            cursor: pointer;
+        }
+       }
+   }
+
+
 }
