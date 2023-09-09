@@ -6,9 +6,9 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
-const SearchAndFilter = () => {
+const SearchAndFilter = ({ darkMode, filter, setFilter }) => {
   return (
-    <section className="searchAndFilter">
+    <section className={`searchAndFilter ${darkMode ? "dark" : ""}`}>
       <form>
         <button>
           <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
@@ -17,20 +17,20 @@ const SearchAndFilter = () => {
       </form>
 
       <div className="filterWrapper">
-        <div className="filterHeader">
+        <div className="filterHeader" onClick={() => setFilter(!filter)}>
           <p>Filter by Region</p>
           <button>
-            <FontAwesomeIcon icon={faChevronDown} className="down" />
+            <FontAwesomeIcon icon={faChevronDown} className={`down ${filter ? 'rotate' : ''}`}/>
           </button>
         </div>
 
-        <ul className="regions">
+          <ul className={`regions ${filter ? 'show' : ''}`}>
             <li>Africa</li>
             <li>America</li>
             <li>Asia</li>
             <li>Europe</li>
             <li>Oceania</li>
-        </ul>
+          </ul>
       </div>
     </section>
   );

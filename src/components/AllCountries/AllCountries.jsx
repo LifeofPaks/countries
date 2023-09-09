@@ -1,10 +1,10 @@
 import React from "react";
 import "./AllCountries.scss";
 
-const AllCountries = ({ countries }) => {
+const AllCountries = ({ countries, darkMode }) => {
 
   return (
-    <div className="countries">
+    <div className={`countries ${darkMode ? 'dark' : ''}`}>
       {countries.map((country) => {
         const {
           name,
@@ -17,13 +17,14 @@ const AllCountries = ({ countries }) => {
 
         return(
             <section key={numericCode}>
-                <div>
                 <img src={flags.png} alt={name} />
+                <div>
                 <h2>{name}</h2>
-                <h3>Population : <span>{population}</span></h3>
+                <h3>Population : <span>{population.toLocaleString()}</span></h3>
                 <h3>Region : <span>{region}</span></h3>
                 <h3>Capital : <span>{capital}</span></h3>
                 </div>
+              
               
             </section>
         )

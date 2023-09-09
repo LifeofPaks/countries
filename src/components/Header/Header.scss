@@ -10,7 +10,13 @@ header{
     padding-block: 1.3rem;
     color: $Very-Dark-Blue-DMBG ;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 3rem;
+    transition: .3s;
+    
+
+    &.dark{
+        background: $Dark-Blue-DME ;
+        color: $White;
+    }
 
     h1{
         font-size: 1.5rem;
@@ -20,15 +26,16 @@ header{
         display: flex;
         align-items: center;
         gap: .3rem;
+        cursor: pointer;
 
 
         img{
-            width: 20px;
-            cursor: pointer;
+            width: 20px;;
         }
         p{
             font-weight: 600;
-            font-size: 15px;
+            font-size: 15px;;
+            transition: .3s;
         }
     }
 }

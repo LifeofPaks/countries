@@ -8,16 +8,25 @@ import SearchAndFilter from './components/SearchAndFilter/SearchAndFilter';
 function App() {
 
   const [countries, setCountries] = useState(CountriesData)
+  const [filter, setFilter] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() =>{
 
   }, [countries])
 
   return (
-    <main className="App">
-      <Header/>
-      <SearchAndFilter/>
-      <AllCountries countries={countries}/>
+    <main className={darkMode ? 'dark' : 'app'}>
+      <Header
+        darkMode ={darkMode}
+        setDarkMode ={setDarkMode}
+      />
+      <SearchAndFilter 
+      filter ={filter}
+setFilter ={setFilter}
+darkMode={darkMode}
+/>
+      <AllCountries countries={countries} darkMode ={darkMode}/>
     </main>
   );
 }
