@@ -1,11 +1,14 @@
 import React from "react";
 import "./AllCountries.scss";
+import { Link } from "react-router-dom";
 
 const AllCountries = ({ countries, darkMode }) => {
 
   return (
-    <div className={`countries ${darkMode ? 'dark' : ''}`}>
-      {countries.map((country) => {
+
+        countries && 
+        <div className={`countries ${darkMode ? 'dark' : ''}`}>
+      {countries?.map((country) => {
         const {
           name,
           flags,
@@ -17,6 +20,7 @@ const AllCountries = ({ countries, darkMode }) => {
 
         return(
             <section key={numericCode}>
+                <Link  to={`/countries/${name}`}>
                 <img src={flags.png} alt={name} />
                 <div>
                 <h2>{name}</h2>
@@ -24,12 +28,16 @@ const AllCountries = ({ countries, darkMode }) => {
                 <h3>Region : <span>{region}</span></h3>
                 <h3>Capital : <span>{capital}</span></h3>
                 </div>
+
+                </Link>
               
               
             </section>
         )
       })}
     </div>
+
+    
   );
 };
 

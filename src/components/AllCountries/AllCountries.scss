@@ -9,14 +9,18 @@
   background: $Very-Light-Gray-LMBG;
   transition: .3s;
 
+
   &.dark{
     background: $Very-Dark-Blue-DMBG;
-    color: $White;
+
 
     section{
         background: $Dark-Blue-DME;
-        color: $White;
     }
+
+    a{
+        color: $White;
+      }
   } 
 
   section {
@@ -28,27 +32,39 @@
     color: $Very-Dark-Blue-DMBG;
     transition: .3s;
 
-    img {
-      width: 100%;
-      height: 155px;
+    &:hover{
+        transform: translateY(-5px);
     }
 
-    div {
-      padding: 1rem 2rem;
+    a{
+        color: $Very-Dark-Blue-DMBG;
+        transition: .3s;
 
-      h2{
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+        img {
+            width: 100%;
+            height: 155px;
+          }
+      
+          div {
+            padding: 1rem 2rem;
+      
+            h2{
+              font-size: 1.1rem;
+              margin-bottom: 1rem;
+            }
+      
+            h3{
+              font-size: .9rem;
+              margin-bottom: 0.3rem;
+      
+              span{
+                  font-weight: normal;
+              }
+            }
+      
+          }
       }
 
-      h3{
-        font-size: .9rem;
-        margin-bottom: 0.3rem;
-
-        span{
-            font-weight: normal;
-        }
-      }
-    }
+ 
   }
 }

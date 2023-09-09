@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding-block: 3rem;
   transition: 0.3s;
+  background: $White;
 
   &.dark {
     background: $Very-Dark-Blue-DMBG;
@@ -55,11 +56,13 @@
     width: 500px;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    transition: .3s;
 
     button {
       .icon {
         color: $Dark-Gray-LMI;
         font-size: 16px;
+        transition: .3s;
       }
     }
 
@@ -68,6 +71,7 @@
 
       &::placeholder {
         color: $Dark-Gray-LMI;
+        transition: .3s;
       }
 
       &:focus{

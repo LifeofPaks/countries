@@ -1,0 +1,124 @@
+@import "../../styles/Responsive.scss";
+@import "../../styles/Variables.scss";
+
+.country{
+    padding-inline: 5%;
+    padding-top: 6%;
+    background: $White;
+    transition: .3s;
+    height: 100vh;
+    color: $Very-Dark-Blue-LMT;
+
+    &.dark{
+         background: $Very-Dark-Blue-DMBG;
+         color: $White;
+
+         a{
+            color: $White;
+        }
+
+       
+    }
+
+  
+    a{
+        color: $Very-Dark-Blue-LMT;
+        transition: .3s;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;
+        padding: .7rem 2rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 7%;
+
+        .icon{
+            font-size: 15px;
+            margin-right: .5rem;
+        }  
+    
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 125px;
+
+        img{
+            width: 555px;
+            height: 400px;
+            
+            opacity: 0;
+            animation: fadeInLeft 2s 1.3s forwards;
+        }
+
+        .details{
+            width: 100%;
+
+            opacity: 0;
+            animation: fadeIn 2s 1.8s forwards;
+
+            p{
+                font-weight: 600;
+            }
+
+            h1{
+                margin-bottom: 2rem;
+            }
+
+            .row{
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                p{
+                    margin-bottom: .8rem;
+
+                    span{
+                        font-weight: normal;
+                    }
+                }
+
+                .right{
+                    .languages{
+                        display: flex;
+                        gap: 0.5rem;
+
+                        span{
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+
+            }
+
+            .borderCountries{
+                margin-top: 4rem;
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+
+                .borders{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    li{
+                        font-weight: 200;
+                        padding: .5rem 1rem;
+                        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+                        margin-right: 0.5rem;
+                        font-size: 12px;
+                        border-radius: 3px;
+                        transition: .3s;
+                    }
+                }
+
+            }
+        }
+    }
+}
