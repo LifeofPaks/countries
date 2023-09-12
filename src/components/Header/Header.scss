@@ -11,7 +11,7 @@ header{
     color: $Very-Dark-Blue-DMBG ;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     transition: .3s;
-    
+
 
     &.dark{
         background: $Dark-Blue-DME ;
@@ -20,6 +20,11 @@ header{
 
     h1{
         font-size: 1.5rem;
+
+        @include Mobile{
+            font-size: 1rem;
+          }
+          
     }
 
     .displayMode{
@@ -30,12 +35,21 @@ header{
 
 
         img{
-            width: 20px;;
+            width: 20px;
+            transition: .3s;
+
+            @include Mobile{
+                width: 16px;
+              }
         }
         p{
             font-weight: 600;
             font-size: 15px;;
             transition: .3s;
+
+            @include Mobile{
+                font-size: 13px
+              }
         }
     }
 }

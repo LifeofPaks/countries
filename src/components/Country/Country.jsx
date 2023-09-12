@@ -10,16 +10,17 @@ const Country = ({ darkMode }) => {
 
   useEffect(() => {
     const fetchCountryData = async () => {
-      const resp = await fetch(`https://restcountries.com/v3.1/name/${name}`);
-      const countryData = await resp.json();
-
-      setCountry(countryData);
-      console.log(Object.entries(countryData[0].name.nativeName)[0][1].official);
-
+      try {
+        const resp = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+        const data = await resp.json();
+        setCountry(data)
+      } catch (e) {
+        console.error(e);
+      }
     };
 
     fetchCountryData();
-  }, []);
+  }, [name]);
 
   return (
     <div className={`country ${darkMode ? "dark" : ""}`}>
@@ -44,7 +45,11 @@ const Country = ({ darkMode }) => {
 
         return (
           <div className="container" key={ccn3}>
+
+            <div className="flag">
+
             <img src={flags.png} alt={name.common} />
+            </div>
 
             <div className="details">
               <h1>{name.common}</h1>
@@ -52,7 +57,10 @@ const Country = ({ darkMode }) => {
               <div className="row">
                 <div className="left">
                   <p>
-                    Native Name: <span>{Object.entries(name.nativeName)[0][1].official}</span>
+                    Native Name:{" "}
+                    <span>
+                      {Object.entries(name.nativeName)[0][1].official}
+                    </span>
                   </p>
                   <p>
                     Population: <span>{population.toLocaleString()}</span>
@@ -65,27 +73,24 @@ const Country = ({ darkMode }) => {
                   </p>
                   <p>
                     Capital: <span>{capital[0]}</span>
-                    
                   </p>
                 </div>
 
                 <div className="right">
                   <p>
                     Top Level Domian: <span>{tld[0]}</span>
-                    
                   </p>
                   <p>
-                    Currencies: <span>{Object.entries(currencies)[0][1].name}</span>
+                    Currencies:{" "}
+                    <span>{Object.entries(currencies)[0][1].name}</span>
                   </p>
 
                   <div className="languages">
                     <p>Languages:</p>
-                     <div>
-                        {
-                            (Object.values)(languages)?.map((item, index) =>(
-                                <span key={index}>{item}</span>
-                            ))
-                        }
+                    <div>
+                      {Object.values(languages)?.map((item, index) => (
+                        <span key={index}>{item}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -93,11 +98,11 @@ const Country = ({ darkMode }) => {
               <div className="borderCountries">
                 <p>Border Countries: </p>
                 <ul className="borders">
-                    {
-                       borders?.map((item, index) =>(
-                            <li key={index}>{item}</li>
-                        ))
-                    }
+                  {borders?.map((item, index) => (
+                    <li className={darkMode ? "dark" : ""} key={index}>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

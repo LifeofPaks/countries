@@ -10,11 +10,17 @@
   transition: 0.3s;
   background: $White;
 
+  @include Mobile{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+
   &.dark {
     background: $Very-Dark-Blue-DMBG;
     color: $White;
 
-    form {
+    .form {
       background: $Dark-Blue-DME;
 
       button {
@@ -27,6 +33,7 @@
         width: 100%;
         color: $White;
 
+
         &::placeholder {
           color: $White;
         }
@@ -34,11 +41,15 @@
     }
 
     .filterWrapper {
+      .down {
+        color: $White;
+      }
       .filterHeader {
         background: $Dark-Blue-DME;
-        .down {
-          color: $White;
-        }
+        color: $White;
+        width: 100%;
+
+        
       }
 
       .regions {
@@ -47,7 +58,7 @@
     }
   }
 
-  form {
+  .form {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -56,13 +67,17 @@
     width: 500px;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-    transition: .3s;
+    transition: 0.3s;
+
+    @include Mobile{
+      width: 100%;
+    }
 
     button {
       .icon {
         color: $Dark-Gray-LMI;
         font-size: 16px;
-        transition: .3s;
+        transition: 0.3s;
       }
     }
 
@@ -71,13 +86,12 @@
 
       &::placeholder {
         color: $Dark-Gray-LMI;
-        transition: .3s;
+        transition: 0.3s;
       }
 
-      &:focus{
-
-        &::placeholder{
-            color: transparent;
+      &:focus {
+        &::placeholder {
+          color: transparent;
         }
       }
     }
@@ -85,63 +99,47 @@
 
   .filterWrapper {
     display: flex;
-    flex-direction: column;
     gap: 0.2rem;
-    transition: .3s;
+    transition: 0.3s;
+    width: 200px;
+    position: relative;
 
-    .filterHeader {
-      position: relative;
+    select {
+      width: 100%;
       background: $White;
-      padding: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 1rem 1.2rem;
       gap: 1rem;
-      width: 200px;
       border-radius: 5px;
       box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
       cursor: pointer;
-
-      p {
-        font-size: 14px;
-      }
-
-      .down {
-        font-size: 12px;
-        transition: .3s;
-
-        &.rotate{
-            transform: rotate(180deg);
-        }
-      }
-    }
-
-    .regions {
-      position: absolute;
-      background: $White;
-      border-radius: 5px;
-      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-      padding: 1.2rem;
+      border: none;
+      outline: none;
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      width: 200px;
-      margin-top: 3.8rem;
-      height: 0;
-      overflow: hidden;
-      opacity: 0;
+      align-items: center;
+      font-size: 14px;
+      appearance: none;
+      color: $Very-Dark-Blue-LMT;
       transition: .3s;
 
-      &.show{
-        height: fit-content;
-        overflow: unset;
-        opacity: 1;
+      option{
+        background: #000;
+        color: red;
       }
 
-      li {
-        font-size: 14px;
-        cursor: pointer;
-      }
+    }
+
+
+    .down {
+      font-size: 12px;
+      transition: 0.3s;
+      position: absolute;
+      color: red;
+      right: 1rem;
+      font-size: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $Very-Dark-Blue-LMT;
+
     }
   }
 }

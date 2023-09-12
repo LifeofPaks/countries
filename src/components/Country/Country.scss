@@ -9,15 +9,31 @@
     height: 100vh;
     color: $Very-Dark-Blue-LMT;
 
+    @include Mobile{
+        padding-bottom: 2rem;
+        height: 100%;
+      }
+      
+
     &.dark{
          background: $Very-Dark-Blue-DMBG;
          color: $White;
 
          a{
             color: $White;
+            background: $Dark-Blue-DME;
         }
 
-       
+        .borderCountries{
+
+            .borders{
+
+                li{
+                    background: $Dark-Blue-DME;
+                }
+            }
+
+        }
     }
 
   
@@ -35,9 +51,23 @@
         width: fit-content;
         margin-bottom: 7%;
 
+        @include Mobile{
+            padding: 0.5rem 1rem;
+            font-size: 10px;
+          }
+
+
+       
         .icon{
             font-size: 15px;
             margin-right: .5rem;
+
+
+        @include Mobile{
+            font-size: 11px;
+            margin-right: .3rem;       
+          }
+
         }  
     
     }
@@ -48,19 +78,35 @@
         justify-content: space-between;
         gap: 125px;
 
-        img{
-            width: 555px;
-            height: 400px;
-            
-            opacity: 0;
-            animation: fadeInLeft 2s 1.3s forwards;
+        @include Mobile{
+            flex-direction: column;
+            gap: 2rem;
+          }
+
+
+        .flag{
+            width: 100%;
+
+            img{
+                width: 555px;
+                height: 400px;
+                
+                opacity: 0;
+                animation: fadeInLeft 1s 1s forwards;
+
+                @include Mobile{
+                    width: 100%;
+                    height: 200px;
+                  }
+        
+            }
         }
 
         .details{
             width: 100%;
 
             opacity: 0;
-            animation: fadeIn 2s 1.8s forwards;
+            animation: fadeIn 2s 1.2s forwards;
 
             p{
                 font-weight: 600;
@@ -68,6 +114,12 @@
 
             h1{
                 margin-bottom: 2rem;
+
+                @include Mobile{
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                  }
+                
             }
 
             .row{
@@ -76,11 +128,24 @@
                 align-items: flex-start;
                 justify-content: space-between;
 
+                @include Mobile{
+                    flex-direction: column;
+                  }
+
                 p{
                     margin-bottom: .8rem;
 
+                    @include Mobile{
+                        font-size: 14px;
+                      }
+    
+
                     span{
                         font-weight: normal;
+
+                        @include Mobile{
+                            font-size: 13px;
+                          }
                     }
                 }
 
@@ -91,6 +156,11 @@
 
                         span{
                             margin-right: 0.5rem;
+
+                            @include Mobile{
+                                font-size: 13px;
+                              }
+                              
                         }
                     }
                 }
@@ -103,10 +173,21 @@
                 align-items: center;
                 gap: 0.6rem;
 
+                @include Mobile{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-top: 1rem;
+                    font-size: 14px;
+                  }
+                  
+
                 .borders{
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
+                    flex-wrap: wrap;
+
+                   
                     li{
                         font-weight: 200;
                         padding: .5rem 1rem;
@@ -115,6 +196,11 @@
                         font-size: 12px;
                         border-radius: 3px;
                         transition: .3s;
+                        background: $White;
+
+                        &.dark{
+                            background: $Dark-Blue-DME;
+                        }
                     }
                 }
 
